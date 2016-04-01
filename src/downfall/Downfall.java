@@ -19,7 +19,7 @@ public class Downfall {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        ApplicationStarter.run(args, "Downfall", new Dimension(1280, 720), new Nation());
+        ApplicationStarter.run(args, "Downfall", new Dimension(1280, 720), new Map());
     }
     
 }

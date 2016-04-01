@@ -14,9 +14,9 @@ import java.awt.event.MouseEvent;
  *
  * @author mpipo <>
  */
-class Nation extends Environment {
+class Map extends Environment {
 
-    public Nation() {
+    public Map() {
     }
 
     @Override
