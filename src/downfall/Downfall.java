@@ -5,6 +5,9 @@
  */
 package downfall;
 
+import environment.ApplicationStarter;
+import java.awt.Dimension;
+
 /**
  *
  * @author mpipo <>
@@ -16,6 +19,7 @@ public class Downfall {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        ApplicationStarter.run(args, "Downfall", new Dimension(1280, 720), new Nation());
     }
     
 }
