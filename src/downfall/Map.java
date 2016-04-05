@@ -6,6 +6,7 @@
 package downfall;
 
 import environment.Environment;
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
@@ -47,6 +48,12 @@ class Map extends Environment {
     @Override
     public void paintEnvironment(Graphics graphics) {
 
+        graphics.drawRect(350, 0, 400, 670);
+        graphics.drawRect(850, 0, 400, 670);
+        graphics.drawRect(-10, 470, 300, 200);
+        
+        graphics.setColor(Color.yellow);
+
     }
-    
+
 }

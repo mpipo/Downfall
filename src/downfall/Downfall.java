@@ -10,7 +10,7 @@ import java.awt.Dimension;
 
 /**
  *
- * @author mpipo <>
+ * @author mpipo, Mr_Hushbr0wn <>
  */
 public class Downfall {
 
