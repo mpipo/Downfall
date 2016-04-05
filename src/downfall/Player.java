@@ -1,3 +1,5 @@
+package downfall;
+
 
 import environment.Direction;
 import java.awt.Color;
