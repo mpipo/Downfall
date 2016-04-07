@@ -3,10 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/Users/panpjp/NetBeansProjects/Downfall/src/downfall/MenuType.java</file>
             <file>file:/Users/panpjp/NetBeansProjects/Downfall/src/downfall/dfMenu.java</file>
             <file>file:/Users/panpjp/NetBeansProjects/Downfall/src/downfall/Downfall.java</file>
             <file>file:/Users/panpjp/NetBeansProjects/Downfall/src/downfall/Map.java</file>
+=======
+            <file>file:/C:/Users/asus%20pc/Documents/NetBeansProjects/Downfall/src/downfall/Map.java</file>
+            <file>file:/C:/Users/asus%20pc/Documents/NetBeansProjects/Downfall/src/downfall/Downfall.java</file>
+>>>>>>> origin/master
         </group>
     </open-files>
 </project-private>
