@@ -22,7 +22,7 @@ class Map extends Environment {
 
     public Map() {
         this.state = GameState.MENU;
-        
+        this.setBackground(Color.black);
     }
 
     @Override
