@@ -17,7 +17,12 @@ import java.awt.event.MouseEvent;
  */
 class Map extends Environment {
 
+    private final GameState state;
+    private dfMenu gamestartMenu;
+
     public Map() {
+        this.state = GameState.MENU;
+        this.setBackground(Color.black);
     }
 
     @Override

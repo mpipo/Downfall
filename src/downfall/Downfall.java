@@ -6,7 +6,9 @@
 package downfall;
 
 import environment.ApplicationStarter;
+import environment.Environment;
 import java.awt.Dimension;
+import javax.swing.JFrame;
 
 /**
  *
@@ -19,7 +21,18 @@ public class Downfall {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        ApplicationStarter.run(args, "Downfall", new Dimension(1280, 720), new Map());
+        run("Downfall", true, new Map());
+    }
+        public static JFrame run(String appName, boolean isMaximized, Environment environment) {
+        JFrame frame = new JFrame(appName);
+
+        frame.add(environment);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            if (isMaximized) {
+                frame.setExtendedState(frame.getExtendedState() | JFrame.MAXIMIZED_BOTH);
+            }
+        frame.setVisible(true);
+        return frame;
     }
     
 }
