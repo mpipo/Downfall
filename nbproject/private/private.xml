@@ -3,8 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/Users/panpjp/NetBeansProjects/Downfall/src/downfall/Downfall.java</file>
             <file>file:/Users/panpjp/NetBeansProjects/Downfall/src/downfall/Map.java</file>
+=======
+<<<<<<< HEAD
+            <file>file:/Users/Luis/NetBeansProjects/Downfall/src/downfall/SpriteManager.java</file>
+            <file>file:/Users/Luis/NetBeansProjects/Downfall/src/downfall/SpriteManagerFinal.java</file>
+=======
+            <file>file:/C:/Users/asus%20pc/Documents/NetBeansProjects/Downfall/src/downfall/Player.java</file>
+            <file>file:/C:/Users/asus%20pc/Documents/NetBeansProjects/Downfall/src/downfall/Map.java</file>
+            <file>file:/C:/Users/asus%20pc/Documents/NetBeansProjects/Downfall/src/downfall/Downfall.java</file>
+>>>>>>> master
+>>>>>>> origin/lm-animation-01
         </group>
     </open-files>
 </project-private>
