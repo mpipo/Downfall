@@ -17,8 +17,11 @@ import java.awt.event.MouseEvent;
  */
 class Map extends Environment {
 
+    private final GameState state;
+    private dfMenu gamestartMenu;
+
     public Map() {
-        
+        this.state = GameState.MENU;
         this.setBackground(Color.black);
     }
 
@@ -50,6 +53,12 @@ class Map extends Environment {
     @Override
     public void paintEnvironment(Graphics graphics) {
 
+        graphics.drawRect(350, 0, 400, 670);
+        graphics.drawRect(850, 0, 400, 670);
+        graphics.drawRect(-10, 470, 300, 200);
+        
+        graphics.setColor(Color.yellow);
+
     }
-    
+
 }
