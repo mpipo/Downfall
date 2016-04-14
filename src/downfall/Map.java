@@ -26,9 +26,7 @@ class Map extends Environment {
         this.state = GameState.MENU;
 
         this.setBackground(Color.black);
-
         this.setBackground(Color.white);
-
     }
 
     @Override
@@ -59,28 +57,20 @@ class Map extends Environment {
     @Override
     public void paintEnvironment(Graphics graphics) {
 
-
-        graphics.drawRect(350, 0, 400, 670);
-        graphics.drawRect(850, 0, 400, 670);
-        graphics.drawRect(-10, 470, 300, 200);
-        
-        graphics.setColor(Color.yellow);
-
-        graphics.drawRect(850, 0, 500, 800);
-        graphics.drawRect(1400, 0, 500, 800);
-        graphics.drawRect(-10, 400, 700, 400);
+        graphics.drawRect(475, 0, 350, 500);
+        graphics.drawRect(900, 0, 350, 500);
+        graphics.drawRect(-10, 200, 400, 300);
         
         graphics.setColor(Color.magenta);
-        graphics.drawRect(0, 800, 1920, 200);
+        graphics.drawRect(0, 500, 1250, 165);
         
         graphics.setColor(Color.red);
-        graphics.drawRect(450, 635, 80, 165);
+        graphics.drawRect(500, 370, 70, 130);
 
  
     } 
     private void setUpGame() {
         Enemy01 = new Enemy(Enemy01.ENEMY_STAND_RIGHT, new Point(323, 232), Enemy01);
-        
     }
 
 }
