@@ -37,7 +37,7 @@ public class EnemyMechanics {
     }
 
     public void draw(Graphics graphics) {
-        graphics.drawImage(getImage(), position.x, position.y, getWidth(), getHeight(), null);
+//        graphics.drawImage(getImage(), position.x, position.y, getWidth(), getHeight(), null);
 //        graphics.setColor(Color.RED);
 //        graphics.drawRect(getHitBox().x, getHitBox().y, getHitBox().width, getHitBox().height);
     }
@@ -53,7 +53,7 @@ public class EnemyMechanics {
         this.position = position;
         this.speed = 2;
         
-        this.animator = new Animator(imageManager, STAND, width)
+        this.animator = new Animator(imageManager, STAND, width);
         
         
         
@@ -85,9 +85,9 @@ public class EnemyMechanics {
     private int speed = 2;
     private Action action;
 
-    public BufferedImage getImage() {
+//    public BufferedImage getImage() {
 //        return imageProvider.getAnimatedImage(animatorName);
-    }
+//    }
 
     /**
      * @return the x
@@ -143,19 +143,19 @@ public class EnemyMechanics {
 
         switch (direction) {
             case LEFT:
-                imageProvider.setAnimatorImageName(animatorName, this.WALK_LEFT);
+//                imageProvider.setAnimatorImageName(animatorName, this.WALK_LEFT);
                 break;
 
             case RIGHT:
-                imageProvider.setAnimatorImageName(animatorName, this.WALK_RIGHT);
+//                imageProvider.setAnimatorImageName(animatorName, this.WALK_RIGHT);
                 break;
 
             case UP:
-                imageProvider.setAnimatorImageName(animatorName, this.WALK_UP);
+//                imageProvider.setAnimatorImageName(animatorName, this.WALK_UP);
                 break;
 
             case DOWN:
-                imageProvider.setAnimatorImageName(animatorName, this.WALK_DOWN);
+//                imageProvider.setAnimatorImageName(animatorName, this.WALK_DOWN);
                 break;
 
 //            default:
