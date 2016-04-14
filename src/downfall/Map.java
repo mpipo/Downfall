@@ -76,7 +76,11 @@ class Map extends Environment {
         graphics.setColor(Color.red);
         graphics.drawRect(450, 635, 80, 165);
 
- Enemy01 = new Enemy(Enemy01.ENEMY_STAND_RIGHT, new Point(323, 232));
+ 
     } 
+    private void setUpGame() {
+        Enemy01 = new Enemy(Enemy01.ENEMY_STAND_RIGHT, new Point(323, 232), Enemy01);
+        
+    }
 
 }
