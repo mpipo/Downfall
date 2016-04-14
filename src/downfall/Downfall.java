@@ -20,19 +20,11 @@ public class Downfall {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        run("Downfall", true, new Map());
-    }
-        public static JFrame run(String appName, boolean isMaximized, Environment environment) {
-        JFrame frame = new JFrame(appName);
+        {
+//        ApplicationStarter.run("PacPong Run", new Arena());
+            ApplicationStarter.run(new String[0], "PacPong", new Dimension(1280, 720), new Map());
 
-        frame.add(environment);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            if (isMaximized) {
-                frame.setExtendedState(frame.getExtendedState() | JFrame.MAXIMIZED_BOTH);
-            }
-        frame.setVisible(true);
-        return frame;
+        }
+
     }
-    
 }

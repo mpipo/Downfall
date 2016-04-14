@@ -8,6 +8,7 @@ package downfall;
 import environment.Environment;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Point;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
@@ -19,6 +20,7 @@ class Map extends Environment {
 
     private final GameState state;
     private dfMenu gamestartMenu;
+    private Enemy Enemy01;
 
     public Map() {
         this.state = GameState.MENU;
@@ -55,13 +57,21 @@ class Map extends Environment {
     public void paintEnvironment(Graphics graphics) {
 
 
-        graphics.drawRect(350, 0, 400, 670);
-        graphics.drawRect(850, 0, 400, 670);
-        graphics.drawRect(-10, 470, 300, 200);
-        
-        graphics.setColor(Color.yellow);
+        graphics.drawRect(475, 0, 350, 500);
+        graphics.drawRect(900, 0, 350, 500);
+        graphics.drawRect(-10, 200, 400, 300);
+
+        graphics.setColor(Color.magenta);
+        graphics.drawRect(0, 500, 1250, 165);
+
+        graphics.setColor(Color.red);
+        graphics.drawRect(500, 370, 70, 130);
 
 
+
+    }
+    private void setUpGame() {
+        Enemy01 = new Enemy(Enemy01.ENEMY_STAND_RIGHT, new Point(323, 232), Enemy01);
     }
 
 }
