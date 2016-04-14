@@ -6,6 +6,8 @@
 package downfall;
 
 import environment.Direction;
+import images.Animator;
+import images.ImageManager;
 import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Rectangle;
@@ -16,7 +18,9 @@ import java.util.ArrayList;
  *
  * @author Luis
  */
-public class EnemyMechanics {   public void move() {
+public class EnemyMechanics {
+
+    public void move() {
         if (direction == Direction.LEFT) {
             position.x -= getSpeed();
         } else if (direction == Direction.RIGHT) {
@@ -41,16 +45,17 @@ public class EnemyMechanics {   public void move() {
     {
         setWidth(24);
         setHeight(26);
-
     }
 
-    public Enemy(String type, Point position, AnimatedImageProvidetIntf imageProvider) {
-
-        this.imageProvider = imageProvider;
+//    public EnemyMechanics(String type, Point position, AnimatedImageProviderIntf imageProvider) {
+    public EnemyMechanics(Point position, ImageManager imageManager) {
+        
         this.position = position;
         this.speed = 2;
         
-      
+        this.animator = new Animator(imageManager, STAND, width)
+        
+        
         
 //        if (type.equals(ENEMY_TYPE_01)) {
 //            animatorName = SpriteManager;
@@ -69,18 +74,19 @@ public class EnemyMechanics {   public void move() {
 //    public static final String ENEMY_TYPE_YELLOW_CHICA = "YELLOW_CHICA";
 //    public static final String ENEMY_TYPE_BLUE_BONNIE = "BLUE_BONNIE";
 //    public static final String ENEMY_TYPE_ORANGE_FREDDY = "ORANGE_FREDDY";
-
     }
     private int width, height;
     private Point position;
     private ArrayList<String> STAND, WALK_LEFT, WALK_RIGHT, WALK_UP, WALK_DOWN;
-    private String animatorName;
+//    private String animatorName;
+    private Animator animator;
     private Direction direction;
-    private AnimatedImageProvidetIntf imageProvider;
+    private AnimatedImageProviderIntf imageProvider;
     private int speed = 2;
+    private Action action;
 
     public BufferedImage getImage() {
-        return imageProvider.getAnimatedImage(animatorName);
+//        return imageProvider.getAnimatedImage(animatorName);
     }
 
     /**
@@ -188,7 +194,25 @@ public class EnemyMechanics {   public void move() {
         this.height = height;
     }
 
-}
-    
-    
+    /**
+     * @return the action
+     */
+    public Action getAction() {
+        return action;
+    }
 
+    /**
+     * @param action the action to set
+     */
+    public void setAction(Action action) {
+        this.action = action;
+        
+        switch (action){
+            default:
+            case STAND_RIGHT:
+                
+        }
+        
+    }
+
+}
