@@ -53,19 +53,19 @@ public class Player {
      }
     
      //<editor-fold defaultstate="collapsed" desc="movement">
-//     public void move() {
-//         if (isAlive()) {
-//             if (getDirection() == Direction.LEFT) {
-//                 x -= getSpeed();
-//             } else if (getDirection() == Direction.RIGHT) {
-//                 x += getSpeed();
-//             } else if (getDirection() == Direction.DOWN) {
-//                 y += getSpeed();
-//             } else if (getDirection() == Direction.UP) {
-//                 y -= getSpeed();
-//             }
-//         }
-//     }
+     public void move() {
+         if (isAlive()) {
+             if (getDirection() == Direction.LEFT) {
+                 x -= getSpeed();
+             } else if (getDirection() == Direction.RIGHT) {
+                 x += getSpeed();
+             } else if (getDirection() == Direction.DOWN) {
+                 y += getSpeed();
+             } else if (getDirection() == Direction.UP) {
+                 y -= getSpeed();
+             }
+         }
+     }
 //</editor-fold>
      
      //<editor-fold defaultstate="collapsed" desc="Health">
