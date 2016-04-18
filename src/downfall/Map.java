@@ -86,7 +86,7 @@ class Map extends Environment {
         graphics.drawRect(0, 525, 1250, 140);
 
         graphics.setColor(Color.red);
-        graphics.drawRect(500, 395, 70, 130);
+        graphics.drawRect(500, 395, 70, 120);
 
         graphics.setColor(Color.YELLOW);
         graphics.drawRect(0, 0, 1251, 666);
