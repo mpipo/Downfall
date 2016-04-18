@@ -5,6 +5,7 @@ import environment.Direction;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
+import java.awt.Rectangle;
 import java.util.ArrayList;
 
 /*
@@ -48,9 +49,11 @@ public class Player {
 
     }
     
-     public void draw(Graphics graphics) {
-         graphics.fillRect(10, 300, 50, 50);
-     }
+     //<editor-fold defaultstate="collapsed" desc="hitbox">
+    public Rectangle getHitBox() {
+        return new Rectangle(x + (getWidth() / 4), y + (height / 4), getWidth() / 2, height / 2);
+    }
+//</editor-fold>
     
      //<editor-fold defaultstate="collapsed" desc="movement">
      public void move() {
