@@ -7,35 +7,42 @@ package downfall;
 
 import environment.Direction;
 import images.Animator;
+import images.ImageManager;
+import images.ResourceTools;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
  * @author Luis
  */
 public class Enemy {
-    
-    
-    public Enemy(Point position, int speed, int width, int height, Direction direction, Action action){
+
+    public ArrayList<String> ENEMY_STAND_RIGHT;
+    public ArrayList<String> ENEMY_PUNCH_RIGHT;
+
+    {
+        ENEMY_STAND_RIGHT = new ArrayList<>();
+        ENEMY_PUNCH_RIGHT = new ArrayList<>();
+    }
+
+    public Enemy(Point position, int speed, int width, int height, Direction direction, Action action) {
         this.position = position;
+        this.speed = speed;
+        this.height = height;
+        this.width = width;
+        this.direction = direction;
+        this.action = action;
+
         //...
-        
         setAction(action);
     }
 
-    Enemy(ArrayList<String> ENEMY_STAND_RIGHT, Point point, Enemy Enemy01) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    
-    
-    
-    
-        public void move() {
+    public void move() {
         if (getDirection() == Direction.LEFT) {
             position.x -= getSpeed();
         } else if (getDirection() == Direction.RIGHT) {
@@ -53,16 +60,9 @@ public class Enemy {
 
     public void draw(Graphics graphics) {
         graphics.drawImage(getImage(), getPosition().x, getPosition().y, getWidth(), getHeight(), null);
+     
 //        graphics.setColor(Color.RED);
 //        graphics.drawRect(getHitBox().x, getHitBox().y, getHitBox().width, getHitBox().height);
-    }
-
-    public ArrayList<String> ENEMY_STAND_RIGHT;
-    public ArrayList<String> ENEMY_PUNCH_RIGHT;
- 
-    {
-        ENEMY_STAND_RIGHT = new ArrayList<>();
-        ENEMY_PUNCH_RIGHT = new ArrayList<>();
     }
 
 //<editor-fold defaultstate="collapsed" desc="Properties">
@@ -72,46 +72,46 @@ public class Enemy {
     Image image;
     private Action action;
     private Animator animator;
-    
-    private Image getImage(){
+
+    private Image getImage() {
         return image;
     }
-    
+
     /**
      * @return the direction
      */
     public Direction getDirection() {
         return direction;
     }
-    
+
     /**
      * @param direction the direction to set
      */
     public void setDirection(Direction direction) {
         this.direction = direction;
     }
-    
+
     /**
      * @return the position
      */
     public Point getPosition() {
         return position;
     }
-    
+
     /**
      * @param position the position to set
      */
     public void setPosition(Point position) {
         this.position = position;
     }
-    
+
     /**
      * @return the speed
      */
     public int getSpeed() {
         return speed;
     }
-    
+
     /**
      * @param speed the speed to set
      */
@@ -159,17 +159,20 @@ public class Enemy {
      */
     public void setAction(Action action) {
         this.action = action;
-        
-        switch (action){
-            default:
-            case STAND_RIGHT:
-                animator.setImageNames(ENEMY_STAND_RIGHT);
-                break;
 
-            case PUNCH_RIGHT:
-                animator.setImageNames(ENEMY_PUNCH_RIGHT);
-                break;
+        if (animator != null) {
+            switch (action) {
+                default:
+                case STAND_RIGHT:
+                    animator.setImageNames(ENEMY_STAND_RIGHT);
+                    break;
+
+                case PUNCH_RIGHT:
+                    animator.setImageNames(ENEMY_PUNCH_RIGHT);
+                    break;
+            }
         }
+
     }
 
     /**

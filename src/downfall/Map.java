@@ -5,12 +5,15 @@
  */
 package downfall;
 
+import environment.Direction;
 import environment.Environment;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import map.Item;
 
 /**
  *
@@ -18,17 +21,26 @@ import java.awt.event.MouseEvent;
  */
 class Map extends Environment {
 
-    private final GameState state;
+    private GameState state;
     private dfMenu gamestartMenu;
-    private Enemy Enemy01;
+    private Enemy enemy01;
+    private ArrayList<Item> items;
 
     public Map() {
+        setState(GameState.RUNNING);
         this.state = GameState.MENU;
 
         this.setBackground(Color.black);
-
         this.setBackground(Color.white);
+        
+        setUpGame();
+        setState(GameState.RUNNING);
+        
+        items = new ArrayList<>();
+    }
 
+    private void setUpGame() {
+        enemy01 = new Enemy_01(new Point(323, 232), 10, 103, 103,Direction.RIGHT, Action.STAND_RIGHT);
     }
 
     @Override
@@ -75,12 +87,26 @@ class Map extends Environment {
         
         graphics.setColor(Color.red);
         graphics.drawRect(450, 635, 80, 165);
-
- 
-    } 
-    private void setUpGame() {
-        Enemy01 = new Enemy(Enemy01.ENEMY_STAND_RIGHT, new Point(323, 232), Enemy01);
         
+        
+//           if (items != null) {
+//            for (int i = 0; i < items.size(); i++) {
+//                items.get(i).draw(graphics);
+    } 
+   
+
+    /**
+     * @return the state
+     */
+    public GameState getState() {
+        return state;
+    }
+
+    /**
+     * @param state the state to set
+     */
+    public void setState(GameState state) {
+        this.state = state;
     }
 
 }
