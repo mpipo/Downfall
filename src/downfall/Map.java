@@ -110,6 +110,7 @@ class Map extends Environment {
 
         graphics.setColor(Color.red);
 <<<<<<< HEAD
+<<<<<<< HEAD
         graphics.drawRect(450, 635, 80, 165);
         
         
@@ -133,6 +134,9 @@ class Map extends Environment {
         this.state = state;
 =======
         graphics.drawRect(500, 395, 70, 130);
+=======
+        graphics.drawRect(500, 395, 70, 120);
+>>>>>>> master
 
         graphics.setColor(Color.YELLOW);
         graphics.drawRect(0, 0, 1251, 666);
