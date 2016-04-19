@@ -5,9 +5,12 @@
  */
 package downfall;
 
+import environment.Direction;
 import environment.Environment;
+import images.ResourceTools;
 import java.awt.Color;
 import java.awt.Graphics;
+
 import java.awt.Point;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
@@ -22,10 +25,23 @@ class Map extends Environment {
     private dfMenu gamestartMenu;
     private Enemy Enemy01;
 
+    private Player player;
+
+
     public Map() {
         this.state = GameState.MENU;
 
         this.setBackground(Color.white);
+
+
+        player = new Player(Direction.RIGHT);
+
+        player = getPlayer();
+    }
+
+    private Player getPlayer() {
+        return new Player(500, 395, 70, 130);
+
     }
 
     @Override
@@ -40,6 +56,16 @@ class Map extends Environment {
 
     @Override
     public void keyPressedHandler(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_W) {
+            player.setDirection(Direction.UP);
+        } else if (e.getKeyCode() == KeyEvent.VK_S) {
+            player.setDirection(Direction.DOWN);
+        } else if (e.getKeyCode() == KeyEvent.VK_A) {
+            player.setDirection(Direction.LEFT);
+        } else if (e.getKeyCode() == KeyEvent.VK_D) {
+
+            player.setDirection(Direction.RIGHT);
+        }
 
     }
 
@@ -56,20 +82,21 @@ class Map extends Environment {
     @Override
     public void paintEnvironment(Graphics graphics) {
 
-
-        graphics.drawRect(475, 0, 350, 500);
-        graphics.drawRect(900, 0, 350, 500);
-        graphics.drawRect(-10, 200, 400, 300);
+        graphics.drawRect(475, -10, 350, 535);
+        graphics.drawRect(900, -10, 350, 535);
+        graphics.drawRect(-10, 225, 400, 300);
 
         graphics.setColor(Color.magenta);
-        graphics.drawRect(0, 500, 1250, 165);
+        graphics.drawRect(0, 525, 1250, 140);
 
         graphics.setColor(Color.red);
-        graphics.drawRect(500, 370, 70, 130);
+        graphics.drawRect(500, 395, 70, 120);
 
-
+        graphics.setColor(Color.YELLOW);
+        graphics.drawRect(0, 0, 1251, 666);
 
     }
+
     private void setUpGame() {
         Enemy01 = new Enemy(Enemy01.ENEMY_STAND_RIGHT, new Point(323, 232), Enemy01);
     }
