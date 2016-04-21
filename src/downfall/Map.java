@@ -25,12 +25,18 @@ class Map extends Environment {
     private dfMenu gamestartMenu;
     private Enemy Enemy01;
     private Player player;
+    
+    private final Image building01, skyscraper01, skyscraper02, HUD;
 
     public Map() {
         this.state = GameState.MENU;
 
-        this.setBackground(Color.white);
-
+       
+        this.setBackground(ResourceTools.loadImageFromResource("downfall/Images/apocalypsebackground.png").getScaledInstance(1280, 720, Image.SCALE_SMOOTH));
+        building01 = ResourceTools.loadImageFromResource("downfall/Images/Niceland.png");
+        skyscraper01 = ResourceTools.loadImageFromResource("downfall/Images/BuildingII.png");
+        skyscraper02 = ResourceTools.loadImageFromResource("downfall/Images/BuildingIII.png");
+        HUD = ResourceTools.loadImageFromResource("downfall/Images/BrownRectangle.png");
         player = new Player(Direction.RIGHT);
 
         player = getPlayer();
@@ -77,11 +83,12 @@ class Map extends Environment {
 
     @Override
     public void paintEnvironment(Graphics graphics) {
-
-        graphics.drawRect(475, -10, 350, 535);
-        graphics.drawRect(900, -10, 350, 535);
-        graphics.drawRect(-10, 225, 400, 300);
-
+        graphics.drawImage(building01, -10, 225, 400, 300, this);
+        graphics.drawImage(skyscraper01, 475, -10, 350, 535, this);
+        graphics.drawImage(skyscraper02, 900, -10, 350, 535, this);
+        graphics.drawImage(HUD, 0, 525, 1250, 140, this);
+        
+        
         graphics.setColor(Color.magenta);
         graphics.drawRect(0, 525, 1250, 140);
 
