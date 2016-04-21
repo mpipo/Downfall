@@ -3,22 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/panpjp/NetBeansProjects/Downfall/src/downfall/Player.java</file>
             <file>file:/Users/panpjp/NetBeansProjects/Downfall/src/downfall/Downfall.java</file>
             <file>file:/Users/panpjp/NetBeansProjects/Downfall/src/downfall/Map.java</file>
-
-            <file>file:/Users/panpjp/NetBeansProjects/Downfall/src/downfall/MenuType.java</file>
-            <file>file:/Users/panpjp/NetBeansProjects/Downfall/src/downfall/dfMenu.java</file>
-
-            <file>file:/Users/panpjp/NetBeansProjects/Downfall/src/downfall/SpriteManager.java</file>
-            <file>file:/Users/panpjp/NetBeansProjects/Downfall/src/downfall/SpriteManagerFinal.java</file>
-
-            <file>file:/Users/panpjp/NetBeansProjects/Downfall/src/downfall/Enemy01SpriteSheet.java</file>
-            <file>file:/Users/panpjp/NetBeansProjects/Downfall/src/downfall/AnimatedImageProviderIntf.java</file>
-            <file>file:/Users/panpjp/NetBeansProjects/Downfall/src/downfall/Enemy01SpriteSheet.png</file>
-            <file>file:/Users/panpjp/NetBeansProjects/Downfall/src/downfall/Enemy_01.java</file>
-            <file>file:/Users/panpjp/NetBeansProjects/Downfall/src/downfall/EnemyMechanics.java</file>
-
         </group>
     </open-files>
 </project-private>
