@@ -30,6 +30,7 @@ class Map extends Environment {
         this.state = GameState.MENU;
 
         this.setBackground(Color.white);
+        this.setBackground(ResourceTools.loadImageFromResource("downfall/Images/apocalypsebackground.png").getScaledInstance(1280, 720, Image.SCALE_SMOOTH));
 
         player = new Player(Direction.RIGHT);
 
