@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class Enemy_01 extends Enemy {
 
     public static final String ENEMY_01_RIGHT_STAND_01 = "ENEMY_01_RIGHT_STAND_01";
-//    public static final String ENEMY_01_RIGHT_STAND_02 = "ENEMY_01_RIGHT_STAND_02";
+    public static final String ENEMY_01_RIGHT_STAND_02 = "ENEMY_01_RIGHT_STAND_02";
     
 
     public static final String ENEMY_01_RIGHT_PUNCH_01 = "ENEMY_01_RIGHT_PUNCH_01";
@@ -48,7 +48,7 @@ public class Enemy_01 extends Enemy {
 //    
     {
         ENEMY_STAND_RIGHT.add(ENEMY_01_RIGHT_STAND_01);
-//        ENEMY_STAND_RIGHT.add(ENEMY_01_RIGHT_STAND_02);
+        ENEMY_STAND_RIGHT.add(ENEMY_01_RIGHT_STAND_02);
 
         ENEMY_PUNCH_RIGHT.add(ENEMY_01_RIGHT_PUNCH_01);
         ENEMY_PUNCH_RIGHT.add(ENEMY_01_RIGHT_PUNCH_02);
@@ -59,11 +59,11 @@ public class Enemy_01 extends Enemy {
         BufferedImage spritesheet = (BufferedImage) ResourceTools.loadImageFromResource("downfall/ENEMY01SpriteSheet.png");
 
         ImageManager imageManager = new ImageManager();
-        imageManager.addImage(ENEMY_01_RIGHT_STAND_01, spritesheet.getSubimage(82, 455, 55, 82));
-//       imageManager.addImage(ENEMY_01_RIGHT_STAND_02, spritesheet.getSubimage(82, 455, 55, 82));
+        imageManager.addImage(ENEMY_01_RIGHT_STAND_01, spritesheet.getSubimage(82, 455, 70, 120));
+        imageManager.addImage(ENEMY_01_RIGHT_STAND_02, spritesheet.getSubimage(82, 455, 55, 82));
         
         imageManager.addImage(ENEMY_01_RIGHT_STAND_01, image);
-//        imageManager.addImage(ENEMY_01_RIGHT_STAND_02, image);
+        imageManager.addImage(ENEMY_01_RIGHT_STAND_02, image);
 
 //        imageManager.addImage(ENEMY_01_RIGHT_PUNCH_01, spritesheet.getSubimage(x, y, w, h));
         //..

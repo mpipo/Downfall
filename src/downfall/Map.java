@@ -38,12 +38,16 @@ class Map extends Environment {
     public Map() {
         setState(GameState.RUNNING);
         this.state = GameState.MENU;
+        
+         this.setBackground(ResourceTools.loadImageFromResource("downfall/Images/apocalypsebackground.png").getScaledInstance(1280, 720, Image.SCALE_SMOOTH));
+        building01 = ResourceTools.loadImageFromResource("downfall/Images/Niceland.png");
+        skyscraper01 = ResourceTools.loadImageFromResource("downfall/Images/BuildingII.png");
+        skyscraper02 = ResourceTools.loadImageFromResource("downfall/Images/BuildingIII.png");
+        HUD = ResourceTools.loadImageFromResource("downfall/Images/darkbrown.png");
 
-<<<<<<< HEAD
 
-        this.setBackground(Color.black);
 
-        this.setBackground(Color.white);
+
         
         setUpGame();
         setState(GameState.RUNNING);
@@ -55,14 +59,9 @@ class Map extends Environment {
     private void setUpGame() {
         enemy01 = new Enemy_01(new Point(323, 232), 10, 103, 103,Direction.RIGHT, Action.STAND_RIGHT);
 
-=======
+
        
-        this.setBackground(ResourceTools.loadImageFromResource("downfall/Images/apocalypsebackground.png").getScaledInstance(1280, 720, Image.SCALE_SMOOTH));
-        building01 = ResourceTools.loadImageFromResource("downfall/Images/Niceland.png");
-        skyscraper01 = ResourceTools.loadImageFromResource("downfall/Images/BuildingII.png");
-        skyscraper02 = ResourceTools.loadImageFromResource("downfall/Images/BuildingIII.png");
-        HUD = ResourceTools.loadImageFromResource("downfall/Images/darkbrown.png");
->>>>>>> master
+       
         player = new Player(Direction.RIGHT);
 
         player = getPlayer();
@@ -120,13 +119,12 @@ class Map extends Environment {
         graphics.drawRect(0, 525, 1260, 145);
 
         graphics.setColor(Color.red);
-<<<<<<< HEAD
-=======
+
         graphics.drawRect(500, 395, 70, 120);
 
         graphics.setColor(Color.YELLOW);
         graphics.drawRect(0, 0, 1261, 671);
->>>>>>> master
+
 
         graphics.drawRect(450, 635, 80, 165);
         
