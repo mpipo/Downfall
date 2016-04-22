@@ -31,12 +31,15 @@ class Map extends Environment {
 
     private Enemy Enemy01;
     private Player player;
+    
+    private final Image building01, skyscraper01, skyscraper02, HUD;
 
 
     public Map() {
         setState(GameState.RUNNING);
         this.state = GameState.MENU;
 
+<<<<<<< HEAD
 
         this.setBackground(Color.black);
 
@@ -52,6 +55,14 @@ class Map extends Environment {
     private void setUpGame() {
         enemy01 = new Enemy_01(new Point(323, 232), 10, 103, 103,Direction.RIGHT, Action.STAND_RIGHT);
 
+=======
+       
+        this.setBackground(ResourceTools.loadImageFromResource("downfall/Images/apocalypsebackground.png").getScaledInstance(1280, 720, Image.SCALE_SMOOTH));
+        building01 = ResourceTools.loadImageFromResource("downfall/Images/Niceland.png");
+        skyscraper01 = ResourceTools.loadImageFromResource("downfall/Images/BuildingII.png");
+        skyscraper02 = ResourceTools.loadImageFromResource("downfall/Images/BuildingIII.png");
+        HUD = ResourceTools.loadImageFromResource("downfall/Images/darkbrown.png");
+>>>>>>> master
         player = new Player(Direction.RIGHT);
 
         player = getPlayer();
@@ -99,15 +110,23 @@ class Map extends Environment {
 
     @Override
     public void paintEnvironment(Graphics graphics) {
-
-        graphics.drawRect(475, -10, 350, 535);
-        graphics.drawRect(900, -10, 350, 535);
-        graphics.drawRect(-10, 225, 400, 300);
-
+        graphics.drawImage(building01, -10, 225, 400, 300, this);
+        graphics.drawImage(skyscraper01, 475, -10, 350, 535, this);
+        graphics.drawImage(skyscraper02, 910, -10, 350, 535, this);
+        graphics.drawImage(HUD, 0, 525, 12600, 145, this);
+        
+        
         graphics.setColor(Color.magenta);
-        graphics.drawRect(0, 525, 1250, 140);
+        graphics.drawRect(0, 525, 1260, 145);
 
         graphics.setColor(Color.red);
+<<<<<<< HEAD
+=======
+        graphics.drawRect(500, 395, 70, 120);
+
+        graphics.setColor(Color.YELLOW);
+        graphics.drawRect(0, 0, 1261, 671);
+>>>>>>> master
 
         graphics.drawRect(450, 635, 80, 165);
         
