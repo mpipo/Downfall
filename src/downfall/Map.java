@@ -36,7 +36,7 @@ class Map extends Environment {
         building01 = ResourceTools.loadImageFromResource("downfall/Images/Niceland.png");
         skyscraper01 = ResourceTools.loadImageFromResource("downfall/Images/BuildingII.png");
         skyscraper02 = ResourceTools.loadImageFromResource("downfall/Images/BuildingIII.png");
-        HUD = ResourceTools.loadImageFromResource("downfall/Images/BrownRectangle.png");
+        HUD = ResourceTools.loadImageFromResource("downfall/Images/darkbrown.png");
         player = new Player(Direction.RIGHT);
 
         player = getPlayer();
@@ -85,18 +85,18 @@ class Map extends Environment {
     public void paintEnvironment(Graphics graphics) {
         graphics.drawImage(building01, -10, 225, 400, 300, this);
         graphics.drawImage(skyscraper01, 475, -10, 350, 535, this);
-        graphics.drawImage(skyscraper02, 900, -10, 350, 535, this);
-        graphics.drawImage(HUD, 0, 525, 1250, 140, this);
+        graphics.drawImage(skyscraper02, 910, -10, 350, 535, this);
+        graphics.drawImage(HUD, 0, 525, 12600, 145, this);
         
         
         graphics.setColor(Color.magenta);
-        graphics.drawRect(0, 525, 1250, 140);
+        graphics.drawRect(0, 525, 1260, 145);
 
         graphics.setColor(Color.red);
         graphics.drawRect(500, 395, 70, 120);
 
         graphics.setColor(Color.YELLOW);
-        graphics.drawRect(0, 0, 1251, 666);
+        graphics.drawRect(0, 0, 1261, 671);
 
     }
 
