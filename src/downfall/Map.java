@@ -31,8 +31,13 @@ class Map extends Environment {
 
     private Enemy Enemy01;
     private Player player;
+<<<<<<< HEAD
 
     private final Image building01, skyscraper01, skyscraper02, HUD;
+=======
+    
+    private final Image building01, skyscraper01, skyscraper02, HUDbackground, ladder;
+>>>>>>> master
 
     public Map() {
         setState(GameState.RUNNING);
@@ -45,7 +50,14 @@ class Map extends Environment {
         building01 = ResourceTools.loadImageFromResource("downfall/Images/Niceland.png");
         skyscraper01 = ResourceTools.loadImageFromResource("downfall/Images/BuildingII.png");
         skyscraper02 = ResourceTools.loadImageFromResource("downfall/Images/BuildingIII.png");
+<<<<<<< HEAD
         HUD = ResourceTools.loadImageFromResource("downfall/Images/darkbrown.png");
+=======
+        HUDbackground = ResourceTools.loadImageFromResource("downfall/Images/darkbrown.png");
+        ladder = ResourceTools.loadImageFromResource("downfall/Images/ladder.png");
+        
+        player = new Player(Direction.RIGHT);
+>>>>>>> master
 
         setUpGame();
         setState(GameState.RUNNING);
@@ -105,8 +117,15 @@ class Map extends Environment {
         graphics.drawImage(building01, -10, 225, 400, 300, this);
         graphics.drawImage(skyscraper01, 475, -10, 350, 535, this);
         graphics.drawImage(skyscraper02, 910, -10, 350, 535, this);
+<<<<<<< HEAD
         graphics.drawImage(HUD, 0, 525, 1260, 145, this);
 
+=======
+        graphics.drawImage(HUDbackground, 0, 525, 1260, 145, this);
+        graphics.drawImage(ladder, 840, 195, 60, 330, this);
+        
+        
+>>>>>>> master
         graphics.setColor(Color.magenta);
         graphics.drawRect(0, 525, 1260, 145);
 
