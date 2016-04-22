@@ -72,6 +72,7 @@ public class Enemy {
     Image image;
     private Action action;
     private Animator animator;
+    
 
     private Image getImage() {
         return image;

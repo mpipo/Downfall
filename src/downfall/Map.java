@@ -25,22 +25,21 @@ class Map extends Environment {
 
     private GameState state;
     private dfMenu gamestartMenu;
-<<<<<<< HEAD
+
     private Enemy enemy01;
     private ArrayList<Item> items;
-=======
+
     private Enemy Enemy01;
     private Player player;
->>>>>>> master
+
 
     public Map() {
         setState(GameState.RUNNING);
         this.state = GameState.MENU;
 
-<<<<<<< HEAD
+
         this.setBackground(Color.black);
-=======
->>>>>>> master
+
         this.setBackground(Color.white);
         
         setUpGame();
@@ -49,10 +48,10 @@ class Map extends Environment {
         items = new ArrayList<>();
     }
 
-<<<<<<< HEAD
+
     private void setUpGame() {
         enemy01 = new Enemy_01(new Point(323, 232), 10, 103, 103,Direction.RIGHT, Action.STAND_RIGHT);
-=======
+
         player = new Player(Direction.RIGHT);
 
         player = getPlayer();
@@ -60,7 +59,7 @@ class Map extends Environment {
 
     private Player getPlayer() {
         return new Player(500, 395, 70, 130);
->>>>>>> master
+
     }
 
     @Override
@@ -109,9 +108,12 @@ class Map extends Environment {
         graphics.drawRect(0, 525, 1250, 140);
 
         graphics.setColor(Color.red);
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         graphics.drawRect(450, 635, 80, 165);
+        
+        if (enemy01 != null) {
+           enemy01.draw(graphics);
+        }
         
         
 //           if (items != null) {
@@ -132,20 +134,19 @@ class Map extends Environment {
      */
     public void setState(GameState state) {
         this.state = state;
-=======
-        graphics.drawRect(500, 395, 70, 130);
-=======
-        graphics.drawRect(500, 395, 70, 120);
->>>>>>> master
 
-        graphics.setColor(Color.YELLOW);
-        graphics.drawRect(0, 0, 1251, 666);
+//        graphics.drawRect(500, 395, 70, 130);
+//
+//        graphics.drawRect(500, 395, 70, 120);
+//
+//
+//        graphics.setColor(Color.YELLOW);
+//        graphics.drawRect(0, 0, 1251, 666);
 
     }
 
-    private void setUpGame() {
-        Enemy01 = new Enemy(Enemy01.ENEMY_STAND_RIGHT, new Point(323, 232), Enemy01);
->>>>>>> master
-    }
-
+     
+    
 }
+
+
