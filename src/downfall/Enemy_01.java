@@ -59,11 +59,11 @@ public class Enemy_01 extends Enemy {
         BufferedImage spritesheet = (BufferedImage) ResourceTools.loadImageFromResource("downfall/ENEMY01SpriteSheet.png");
 
         ImageManager imageManager = new ImageManager();
-        imageManager.addImage(ENEMY_01_RIGHT_STAND_01, spritesheet.getSubimage(82, 455, 70, 120));
-        imageManager.addImage(ENEMY_01_RIGHT_STAND_02, spritesheet.getSubimage(82, 455, 55, 82));
+        imageManager.addImage(ENEMY_01_RIGHT_STAND_01, spritesheet.getSubimage(10, 455, 46, 82));
+        imageManager.addImage(ENEMY_01_RIGHT_STAND_02, spritesheet.getSubimage(90, 455, 46, 82));
         
-        imageManager.addImage(ENEMY_01_RIGHT_STAND_01, image);
-        imageManager.addImage(ENEMY_01_RIGHT_STAND_02, image);
+//        imageManager.addImage(ENEMY_01_RIGHT_STAND_01, spritesheet.getSubimage(82, 455, 55, 82));
+//        imageManager.addImage(ENEMY_01_RIGHT_STAND_02, spritesheet.getSubimage(82, 455, 55, 82));
 
 //        imageManager.addImage(ENEMY_01_RIGHT_PUNCH_01, spritesheet.getSubimage(x, y, w, h));
         //..

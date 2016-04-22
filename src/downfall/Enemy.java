@@ -69,7 +69,7 @@ public class Enemy {
     private Direction direction;
     private Point position;
     private int speed, width, height;
-    Image image;
+    private Image image;
     private Action action;
     private Animator animator;
     
