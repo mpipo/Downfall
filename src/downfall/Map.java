@@ -25,20 +25,21 @@ class Map extends Environment {
     private dfMenu gamestartMenu;
     private Enemy Enemy01;
     private Player player;
-    
-    private final Image building01, skyscraper01, skyscraper02, HUDbackground, ladder;
+
+    private final Image building01, skyscraper01, skyscraper02, HUDbackground, ladder, bricks, bricksII;
 
     public Map() {
         this.state = GameState.MENU;
 
-       
         this.setBackground(ResourceTools.loadImageFromResource("downfall/Images/apocalypsebackground.png").getScaledInstance(1265, 675, Image.SCALE_SMOOTH));
         building01 = ResourceTools.loadImageFromResource("downfall/Images/Niceland.png");
         skyscraper01 = ResourceTools.loadImageFromResource("downfall/Images/BuildingII.png");
         skyscraper02 = ResourceTools.loadImageFromResource("downfall/Images/BuildingIII.png");
         HUDbackground = ResourceTools.loadImageFromResource("downfall/Images/darkbrown.png");
         ladder = ResourceTools.loadImageFromResource("downfall/Images/ladder.png");
-        
+        bricks = ResourceTools.loadImageFromResource("downfall/Images/bricks.png");
+        bricksII = ResourceTools.loadImageFromResource("downfall/Images/bricksII.png");
+
         player = new Player(Direction.RIGHT);
 
         player = getPlayer();
@@ -90,7 +91,10 @@ class Map extends Environment {
         graphics.drawImage(skyscraper02, 910, -10, 350, 535, this);
         graphics.drawImage(HUDbackground, 0, 525, 1260, 145, this);
         graphics.drawImage(ladder, 840, 195, 60, 330, this);
-        
+        graphics.drawImage(bricksII, 450, 190, 390, 30, this);
+        graphics.drawImage(bricks, 905, 150, 290, 30, this);
+        graphics.drawImage(bricks, 1000, 350, 260, 30, this);
+
         
         graphics.setColor(Color.magenta);
         graphics.drawRect(0, 525, 1260, 145);
