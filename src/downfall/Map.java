@@ -32,7 +32,7 @@ class Map extends Environment {
         this.state = GameState.MENU;
 
        
-        this.setBackground(ResourceTools.loadImageFromResource("downfall/Images/apocalypsebackground.png").getScaledInstance(1280, 720, Image.SCALE_SMOOTH));
+        this.setBackground(ResourceTools.loadImageFromResource("downfall/Images/apocalypsebackground.png").getScaledInstance(1265, 675, Image.SCALE_SMOOTH));
         building01 = ResourceTools.loadImageFromResource("downfall/Images/Niceland.png");
         skyscraper01 = ResourceTools.loadImageFromResource("downfall/Images/BuildingII.png");
         skyscraper02 = ResourceTools.loadImageFromResource("downfall/Images/BuildingIII.png");
@@ -86,7 +86,7 @@ class Map extends Environment {
         graphics.drawImage(building01, -10, 225, 400, 300, this);
         graphics.drawImage(skyscraper01, 475, -10, 350, 535, this);
         graphics.drawImage(skyscraper02, 910, -10, 350, 535, this);
-        graphics.drawImage(HUD, 0, 525, 12600, 145, this);
+        graphics.drawImage(HUD, 0, 525, 1260, 145, this);
         
         
         graphics.setColor(Color.magenta);
