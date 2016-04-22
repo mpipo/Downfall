@@ -23,6 +23,8 @@ public class Enemy_01 extends Enemy {
 
     public static final String ENEMY_01_RIGHT_STAND_01 = "ENEMY_01_RIGHT_STAND_01";
     public static final String ENEMY_01_RIGHT_STAND_02 = "ENEMY_01_RIGHT_STAND_02";
+    public static final String ENEMY_01_RIGHT_STAND_03 = "ENEMY_01_RIGHT_STAND_03";
+    public static final String ENEMY_01_RIGHT_STAND_04 = "ENEMY_01_RIGHT_STAND_04";
     
 
     public static final String ENEMY_01_RIGHT_PUNCH_01 = "ENEMY_01_RIGHT_PUNCH_01";
@@ -49,6 +51,8 @@ public class Enemy_01 extends Enemy {
     {
         ENEMY_STAND_RIGHT.add(ENEMY_01_RIGHT_STAND_01);
         ENEMY_STAND_RIGHT.add(ENEMY_01_RIGHT_STAND_02);
+        ENEMY_STAND_RIGHT.add(ENEMY_01_RIGHT_STAND_03);
+        ENEMY_STAND_RIGHT.add(ENEMY_01_RIGHT_STAND_04);
 
         ENEMY_PUNCH_RIGHT.add(ENEMY_01_RIGHT_PUNCH_01);
         ENEMY_PUNCH_RIGHT.add(ENEMY_01_RIGHT_PUNCH_02);
@@ -60,10 +64,9 @@ public class Enemy_01 extends Enemy {
 
         ImageManager imageManager = new ImageManager();
         imageManager.addImage(ENEMY_01_RIGHT_STAND_01, spritesheet.getSubimage(10, 455, 46, 82));
-        imageManager.addImage(ENEMY_01_RIGHT_STAND_02, spritesheet.getSubimage(90, 455, 46, 82));
-        
-//        imageManager.addImage(ENEMY_01_RIGHT_STAND_01, spritesheet.getSubimage(82, 455, 55, 82));
-//        imageManager.addImage(ENEMY_01_RIGHT_STAND_02, spritesheet.getSubimage(82, 455, 55, 82));
+        imageManager.addImage(ENEMY_01_RIGHT_STAND_02, spritesheet.getSubimage(90, 455, 46, 82));       
+        imageManager.addImage(ENEMY_01_RIGHT_STAND_03, spritesheet.getSubimage(130, 455, 46, 82));
+        imageManager.addImage(ENEMY_01_RIGHT_STAND_04, spritesheet.getSubimage(135, 455, 46, 82));
 
 //        imageManager.addImage(ENEMY_01_RIGHT_PUNCH_01, spritesheet.getSubimage(x, y, w, h));
         //..
