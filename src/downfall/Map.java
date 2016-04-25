@@ -28,10 +28,20 @@ class Map extends Environment {
     private Player player;
 
 
+    private final Image building01, skyscraper01, skyscraper02, HUDbackground, ladder, bricks, bricksII;
+
+
     public Map() {
         this.state = GameState.MENU;
 
-        this.setBackground(Color.white);
+        this.setBackground(ResourceTools.loadImageFromResource("downfall/Images/apocalypsebackground.png").getScaledInstance(1265, 675, Image.SCALE_SMOOTH));
+        building01 = ResourceTools.loadImageFromResource("downfall/Images/Niceland.png");
+        skyscraper01 = ResourceTools.loadImageFromResource("downfall/Images/BuildingII.png");
+        skyscraper02 = ResourceTools.loadImageFromResource("downfall/Images/BuildingIII.png");
+        HUDbackground = ResourceTools.loadImageFromResource("downfall/Images/darkbrown.png");
+        ladder = ResourceTools.loadImageFromResource("downfall/Images/ladder.png");
+        bricks = ResourceTools.loadImageFromResource("downfall/Images/bricks.png");
+        bricksII = ResourceTools.loadImageFromResource("downfall/Images/bricksII.png");
 
 
         player = new Player(Direction.RIGHT);
@@ -81,19 +91,24 @@ class Map extends Environment {
 
     @Override
     public void paintEnvironment(Graphics graphics) {
+        graphics.drawImage(building01, -10, 245, 400, 280, this);
+        graphics.drawImage(skyscraper01, 475, -10, 350, 535, this);
+        graphics.drawImage(skyscraper02, 910, -10, 350, 535, this);
+        graphics.drawImage(HUDbackground, 0, 525, 1260, 145, this);
+        graphics.drawImage(ladder, 840, 195, 60, 330, this);
+        graphics.drawImage(bricksII, 450, 190, 390, 30, this);
+        graphics.drawImage(bricks, 905, 130, 290, 30, this);
+        graphics.drawImage(bricks, 1000, 350, 260, 30, this);
 
-        graphics.drawRect(475, -10, 350, 535);
-        graphics.drawRect(900, -10, 350, 535);
-        graphics.drawRect(-10, 225, 400, 300);
 
-        graphics.setColor(Color.magenta);
-        graphics.drawRect(0, 525, 1250, 140);
+        graphics.setColor(Color.green);
+        graphics.drawRect(0, 525, 1260, 145);
 
         graphics.setColor(Color.red);
         graphics.drawRect(500, 395, 70, 120);
 
         graphics.setColor(Color.YELLOW);
-        graphics.drawRect(0, 0, 1251, 666);
+        graphics.drawRect(0, 0, 1261, 671);
 
     }
 
