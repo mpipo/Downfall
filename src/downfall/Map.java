@@ -32,26 +32,25 @@ class Map extends Environment {
     private Enemy Enemy01;
     private Player player;
 
-<<<<<<< HEAD
+
 
     
 
     
-    private final Image building01, skyscraper01, skyscraper02, HUDbackground, ladder;
-=======
+    
+
     private final Image building01, skyscraper01, skyscraper02, HUDbackground, ladder, bricks, bricksII;
->>>>>>> master
+
 
 
     public Map() {
         setState(GameState.RUNNING);
         this.state = GameState.MENU;
 
-<<<<<<< HEAD
+
         this.setBackground(ResourceTools.loadImageFromResource("downfall/Images/apocalypsebackground.png").getScaledInstance(1280, 720, Image.SCALE_SMOOTH));
 
-=======
->>>>>>> master
+
         this.setBackground(ResourceTools.loadImageFromResource("downfall/Images/apocalypsebackground.png").getScaledInstance(1265, 675, Image.SCALE_SMOOTH));
 
         building01 = ResourceTools.loadImageFromResource("downfall/Images/Niceland.png");
@@ -75,7 +74,7 @@ class Map extends Environment {
     }
 
     private void setUpGame() {
-        enemy01 = new Enemy_01(new Point(323, 232), 10, 103, 103, Direction.RIGHT, Action.STAND_RIGHT);
+        enemy01 = new Enemy_01(new Point(500, 430), 10, 103, 103, Direction.RIGHT, Action.STAND_RIGHT);
 
         player = new Player(Direction.RIGHT);
         player = getPlayer();
