@@ -35,7 +35,7 @@ public class Player {
     private double speed = 11.25; 
 //</editor-fold>
 
-    public Player(int x, int y, int width, int height) {
+    public Player(int x, int y, int width, int height, int velocity) {
         this.x = x;
         this.y = y;
         this.width = width;

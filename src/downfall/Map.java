@@ -42,12 +42,12 @@ class Map extends Environment {
 
         player = new Player(Direction.RIGHT);
 
-        player = getPlayer();
+//        player = getPlayer();
     }
 
-    private Player getPlayer() {
-        return new Player(500, 395, 70, 130);
-    }
+//    private Player getPlayer() {
+//        return new Player(500, 395, 70, 130);
+//    }
 
     @Override
     public void initializeEnvironment() {
