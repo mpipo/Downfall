@@ -136,12 +136,12 @@ class Map extends Environment {
         graphics.drawImage(bricks, 1000, 350, 260, 30, this);
 
         
-<<<<<<< HEAD
+
 
         graphics.setColor(Color.magenta);
-=======
+
         graphics.setColor(Color.green);
->>>>>>> master
+
         graphics.drawRect(0, 525, 1260, 145);
 
         graphics.setColor(Color.red);
