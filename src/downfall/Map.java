@@ -86,17 +86,17 @@ class Map extends Environment {
 
     @Override
     public void paintEnvironment(Graphics graphics) {
-        graphics.drawImage(building01, -10, 225, 400, 300, this);
+        graphics.drawImage(building01, -10, 245, 400, 280, this);
         graphics.drawImage(skyscraper01, 475, -10, 350, 535, this);
         graphics.drawImage(skyscraper02, 910, -10, 350, 535, this);
         graphics.drawImage(HUDbackground, 0, 525, 1260, 145, this);
         graphics.drawImage(ladder, 840, 195, 60, 330, this);
         graphics.drawImage(bricksII, 450, 190, 390, 30, this);
-        graphics.drawImage(bricks, 905, 150, 290, 30, this);
+        graphics.drawImage(bricks, 905, 130, 290, 30, this);
         graphics.drawImage(bricks, 1000, 350, 260, 30, this);
 
         
-        graphics.setColor(Color.magenta);
+        graphics.setColor(Color.green);
         graphics.drawRect(0, 525, 1260, 145);
 
         graphics.setColor(Color.red);
