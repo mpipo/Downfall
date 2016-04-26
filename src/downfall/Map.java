@@ -15,6 +15,8 @@ import java.awt.Image;
 import java.awt.Point;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import map.Item;
 
 /**
  *
@@ -22,39 +24,48 @@ import java.awt.event.MouseEvent;
  */
 class Map extends Environment {
 
-    private final GameState state;
+    private GameState state;
     private dfMenu gamestartMenu;
-    private Enemy Enemy01;
+
+    private Enemy enemy01;
+    private ArrayList<Item> items;
 
     private Player player;
-
-
     private final Image building01, skyscraper01, skyscraper02, HUDbackground, ladder, bricks, bricksII;
 
-
     public Map() {
+        setState(GameState.RUNNING);
         this.state = GameState.MENU;
 
         this.setBackground(ResourceTools.loadImageFromResource("downfall/Images/apocalypsebackground.png").getScaledInstance(1265, 675, Image.SCALE_SMOOTH));
+
         building01 = ResourceTools.loadImageFromResource("downfall/Images/Niceland.png");
         skyscraper01 = ResourceTools.loadImageFromResource("downfall/Images/BuildingII.png");
         skyscraper02 = ResourceTools.loadImageFromResource("downfall/Images/BuildingIII.png");
+
         HUDbackground = ResourceTools.loadImageFromResource("downfall/Images/darkbrown.png");
         ladder = ResourceTools.loadImageFromResource("downfall/Images/ladder.png");
         bricks = ResourceTools.loadImageFromResource("downfall/Images/bricks.png");
         bricksII = ResourceTools.loadImageFromResource("downfall/Images/bricksII.png");
 
+        player = new Player( 600, 430, 103, 103, Direction.RIGHT);
 
-        player = new Player(Direction.RIGHT);
+        setUpGame();
+        setState(GameState.RUNNING);
 
+        items = new ArrayList<>();
+    }
+
+    private void setUpGame() {
+        enemy01 = new Enemy_01(new Point(500, 430), 10, 103, 103, Direction.RIGHT, Action.STAND_RIGHT);
+
+//        player = new Player(Direction.RIGHT);
 //        player = getPlayer();
     }
 
-
-    private Player getPlayer() {
-        return new Player(500, 395, 70, 130);
-
-    }
+//    private Player getPlayer(600, 430, 103, 103 Direction.RIGHT) {
+//        return new Player(500, 395, 70, 130);
+//    }
 
     @Override
     public void initializeEnvironment() {
@@ -75,10 +86,8 @@ class Map extends Environment {
         } else if (e.getKeyCode() == KeyEvent.VK_A) {
             player.setDirection(Direction.LEFT);
         } else if (e.getKeyCode() == KeyEvent.VK_D) {
-
             player.setDirection(Direction.RIGHT);
         }
-
     }
 
     @Override
@@ -96,26 +105,53 @@ class Map extends Environment {
         graphics.drawImage(building01, -10, 245, 400, 280, this);
         graphics.drawImage(skyscraper01, 475, -10, 350, 535, this);
         graphics.drawImage(skyscraper02, 910, -10, 350, 535, this);
+
         graphics.drawImage(HUDbackground, 0, 525, 1260, 145, this);
         graphics.drawImage(ladder, 840, 195, 60, 330, this);
         graphics.drawImage(bricksII, 460, 190, 370, 30, this);
         graphics.drawImage(bricks, 905, 130, 290, 30, this);
         graphics.drawImage(bricks, 1000, 350, 260, 30, this);
 
-
         graphics.setColor(Color.green);
         graphics.drawRect(0, 525, 1260, 145);
-
+        
         graphics.setColor(Color.red);
         graphics.drawRect(500, 395, 70, 120);
 
         graphics.setColor(Color.YELLOW);
         graphics.drawRect(0, 0, 1261, 671);
 
+        graphics.drawRect(450, 635, 80, 165);
+
+        if (enemy01 != null) {
+            enemy01.draw(graphics);
+        }
+
+//           if (items != null) {
+//            for (int i = 0; i < items.size(); i++) {
+//                items.get(i).draw(graphics);
     }
 
-    private void setUpGame() {
-        Enemy01 = new Enemy(Enemy01.ENEMY_STAND_RIGHT, new Point(323, 232), Enemy01);
+    /**
+     * @return the state
+     */
+    public GameState getState() {
+        return state;
+    }
+
+    /**
+     * @param state the state to set
+     */
+    public void setState(GameState state) {
+        this.state = state;
+
+//        graphics.drawRect(500, 395, 70, 130);
+//
+//        graphics.drawRect(500, 395, 70, 120);
+//
+//
+//        graphics.setColor(Color.YELLOW);
+//        graphics.drawRect(0, 0, 1251, 666);
     }
 
 }
