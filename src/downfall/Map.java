@@ -7,11 +7,11 @@ package downfall;
 
 import environment.Direction;
 import environment.Environment;
+import environment.Velocity;
 import images.ResourceTools;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
-
 import java.awt.Point;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
@@ -24,12 +24,12 @@ import map.Item;
  */
 class Map extends Environment {
 
+    public static int DEFAULT_FLOOR = 525; 
+
     private GameState state;
     private dfMenu gamestartMenu;
-
     private Enemy enemy01;
     private ArrayList<Item> items;
-
     private Player player;
     private final Image building01, skyscraper01, skyscraper02, HUDbackground, ladder, bricks, bricksII;
 
@@ -48,7 +48,8 @@ class Map extends Environment {
         bricks = ResourceTools.loadImageFromResource("downfall/Images/bricks.png");
         bricksII = ResourceTools.loadImageFromResource("downfall/Images/bricksII.png");
 
-        player = new Player( 600, 430, 103, 103, Direction.RIGHT);
+        player = new Player(500, 395, 70, 120, Direction.RIGHT);
+        player.setFloor(DEFAULT_FLOOR);
 
         setUpGame();
         setState(GameState.RUNNING);
@@ -74,20 +75,31 @@ class Map extends Environment {
 
     @Override
     public void timerTaskHandler() {
-
+        if (player != null) {
+            player.move();
+        }
     }
 
     @Override
     public void keyPressedHandler(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_W) {
-            player.setDirection(Direction.UP);
+            player.addVelocity(new Velocity(0, -20));
         } else if (e.getKeyCode() == KeyEvent.VK_S) {
-            player.setDirection(Direction.DOWN);
+//            player.addVelocity(new Velocity(0, -10));
         } else if (e.getKeyCode() == KeyEvent.VK_A) {
-            player.setDirection(Direction.LEFT);
+            player.addVelocity(new Velocity(-1, 0));
         } else if (e.getKeyCode() == KeyEvent.VK_D) {
-            player.setDirection(Direction.RIGHT);
+            player.addVelocity(new Velocity(1, 0));
         }
+//        if (e.getKeyCode() == KeyEvent.VK_W) {
+//            player.setDirection(Direction.UP);
+//        } else if (e.getKeyCode() == KeyEvent.VK_S) {
+//            player.setDirection(Direction.DOWN);
+//        } else if (e.getKeyCode() == KeyEvent.VK_A) {
+//            player.setDirection(Direction.LEFT);
+//        } else if (e.getKeyCode() == KeyEvent.VK_D) {
+//            player.setDirection(Direction.RIGHT);
+//        }
     }
 
     @Override
@@ -99,14 +111,14 @@ class Map extends Environment {
     public void environmentMouseClicked(MouseEvent e) {
 
     }
-
+    
     @Override
     public void paintEnvironment(Graphics graphics) {
         graphics.drawImage(building01, -10, 245, 400, 280, this);
         graphics.drawImage(skyscraper01, 475, -10, 350, 535, this);
         graphics.drawImage(skyscraper02, 910, -10, 350, 535, this);
 
-        graphics.drawImage(HUDbackground, 0, 525, 1260, 145, this);
+        graphics.drawImage(HUDbackground, 0, DEFAULT_FLOOR, 1260, 145, this);
         graphics.drawImage(ladder, 840, 195, 60, 330, this);
         graphics.drawImage(bricksII, 460, 190, 370, 30, this);
         graphics.drawImage(bricks, 905, 130, 290, 30, this);
@@ -115,8 +127,8 @@ class Map extends Environment {
         graphics.setColor(Color.green);
         graphics.drawRect(0, 525, 1260, 145);
         
-        graphics.setColor(Color.red);
-        graphics.drawRect(500, 395, 70, 120);
+//        graphics.setColor(Color.red);
+//        graphics.drawRect(500, 395, 70, 120);
 
         graphics.setColor(Color.YELLOW);
         graphics.drawRect(0, 0, 1261, 671);
@@ -125,6 +137,10 @@ class Map extends Environment {
 
         if (enemy01 != null) {
             enemy01.draw(graphics);
+        }
+        
+        if (player != null) {
+            player.draw(graphics);
         }
 
 //           if (items != null) {
