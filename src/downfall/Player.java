@@ -11,6 +11,8 @@ import java.util.ArrayList;
  // @author Mr_Hushbrown
 
 //Add velocity, delta x, delta y properties
+//Get extra help from Mr. Lawrence for this wih Ron
+
 
 public class Player {
 
