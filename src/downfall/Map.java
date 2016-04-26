@@ -10,6 +10,7 @@ import environment.Environment;
 import images.ResourceTools;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Image;
 
 import java.awt.Point;
 import java.awt.event.KeyEvent;
