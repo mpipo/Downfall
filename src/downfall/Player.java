@@ -11,6 +11,8 @@ import java.util.ArrayList;
  // @author Mr_Hushbrown
 
 //Add velocity, delta x, delta y properties
+//Get extra help from Mr. Lawrence for this wih Ron
+
 
 public class Player {
 
@@ -35,7 +37,7 @@ public class Player {
     private double speed = 11.25; 
 //</editor-fold>
 
-    public Player(int x, int y, int width, int height) {
+    public Player(int x, int y, int width, int height, int velocity) {
         this.x = x;
         this.y = y;
         this.width = width;

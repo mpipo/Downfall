@@ -47,8 +47,9 @@ class Map extends Environment {
 
         player = new Player(Direction.RIGHT);
 
-        player = getPlayer();
+//        player = getPlayer();
     }
+
 
     private Player getPlayer() {
         return new Player(500, 395, 70, 130);
@@ -97,7 +98,7 @@ class Map extends Environment {
         graphics.drawImage(skyscraper02, 910, -10, 350, 535, this);
         graphics.drawImage(HUDbackground, 0, 525, 1260, 145, this);
         graphics.drawImage(ladder, 840, 195, 60, 330, this);
-        graphics.drawImage(bricksII, 450, 190, 390, 30, this);
+        graphics.drawImage(bricksII, 460, 190, 370, 30, this);
         graphics.drawImage(bricks, 905, 130, 290, 30, this);
         graphics.drawImage(bricks, 1000, 350, 260, 30, this);
 
