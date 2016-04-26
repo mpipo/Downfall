@@ -14,11 +14,25 @@ import java.util.ArrayList;
 
 public class Player {
 
-    public Player(Direction direction) {
+//<editor-fold defaultstate="collapsed" desc="Constructors">
+    public Player(int x, int y, int width, int height, Direction direction) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
         this.direction = direction;
-
     }
-
+    
+    public Player(int x, int y, int width, int height, int velocity) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.health = 100;
+        
+    }
+//</editor-fold>
+    
     //<editor-fold defaultstate="collapsed" desc="properties">
     private Direction direction = Direction.RIGHT;
     private ArrayList<Point> body;
@@ -35,15 +49,6 @@ public class Player {
     private double speed = 11.25; 
 //</editor-fold>
 
-    public Player(int x, int y, int width, int height, int velocity) {
-        this.x = x;
-        this.y = y;
-        this.width = width;
-        this.height = height;
-        this.health = 100;
-
-    }
-    
      //<editor-fold defaultstate="collapsed" desc="hitbox">
     public Rectangle getHitBox() {
         return new Rectangle(x + (getWidth() / 4), y + (height / 4), getWidth() / 2, height / 2);
