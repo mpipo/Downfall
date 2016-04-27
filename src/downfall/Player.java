@@ -37,6 +37,15 @@ public class Player {
 
     }
 //</editor-fold>
+<<<<<<< HEAD
+=======
+    
+     //<editor-fold defaultstate="collapsed" desc="properties">
+    private Direction direction = Direction.RIGHT;
+    private ArrayList<Point> body;
+    private Color BodyColor = Color.GREEN;
+    private int mouthWidth;
+>>>>>>> refs/remotes/origin/master
 
     //<editor-fold defaultstate="collapsed" desc="properties">
     private int x, y;
