@@ -35,7 +35,7 @@ public class Player {
     }
 //</editor-fold>
     
-    //<editor-fold defaultstate="collapsed" desc="properties">
+     //<editor-fold defaultstate="collapsed" desc="properties">
     private Direction direction = Direction.RIGHT;
     private ArrayList<Point> body;
     private Color BodyColor = Color.GREEN;
