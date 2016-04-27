@@ -110,7 +110,7 @@ class Map extends Environment {
         graphics.drawImage(HUDbackground, 0, 525, 1260, 145, this);
         graphics.drawImage(ladder, 840, 195, 60, 330, this);
         graphics.drawImage(bricksII, 460, 230, 370, 30, this);
-        graphics.drawImage(bricks, 905, 130, 270, 30, this);
+        graphics.drawImage(bricks, 905, 130, 265, 30, this);
         graphics.drawImage(bricks, 1000, 350, 260, 30, this);
 
         graphics.setColor(Color.green);
