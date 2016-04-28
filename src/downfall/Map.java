@@ -32,6 +32,7 @@ class Map extends Environment {
     private ArrayList<Item> items;
     private Player player;
     private final Image building01, skyscraper01, skyscraper02, HUDbackground, ladder, bricks, bricksII;
+    private HUD hud01;
 
     public Map() {
         setState(GameState.RUNNING);
@@ -59,7 +60,7 @@ class Map extends Environment {
 
     private void setUpGame() {
         enemy01 = new Enemy_01(new Point(500, 430), 10, 103, 103, Direction.RIGHT, Action.STAND_RIGHT);
-
+        hud01 = new HUD();
 //        player = new Player(Direction.RIGHT);
 //        player = getPlayer();
     }
@@ -134,7 +135,7 @@ class Map extends Environment {
         graphics.setColor(Color.YELLOW);
         graphics.drawRect(0, 0, 1261, 671);
 
-        
+
         if (enemy01 != null) {
             enemy01.draw(graphics);
         }
@@ -142,6 +143,9 @@ class Map extends Environment {
         if (player != null) {
             player.draw(graphics);
         }
+
+        hud01.draw(graphics);
+
 
 //           if (items != null) {
 //            for (int i = 0; i < items.size(); i++) {
