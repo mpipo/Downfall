@@ -114,7 +114,7 @@ class Map extends Environment {
         graphics.drawImage(bricks, 1000, 350, 260, 30, this);
 
         graphics.setColor(Color.green);
-        graphics.drawRect(0, 525, 1260, 145);
+        graphics.drawRect(0, 524, 1260, 145);
         
         graphics.setColor(Color.red);
         graphics.drawRect(500, 395, 70, 120);
