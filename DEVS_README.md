@@ -2,8 +2,6 @@
 
 - Please give proper credit to the original authors in CREDITS.
 
-- Check the code in way too often like your life depends on it.
+- Check the code in way too often like your life depends on it. Unless you want kittens to die.
 
 - Please be descriptive when making commits.
-
-- *from mpipo* "Americanized English" grinds my gears. Please avoid them if possible.
