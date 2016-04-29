@@ -1,11 +1,11 @@
 package downfall;
 
 import environment.Direction;
-<<<<<<< HEAD
+
 import images.Animator;
-=======
+
 import environment.Velocity;
->>>>>>> master
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -13,32 +13,19 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import java.util.ArrayList;
 
-<<<<<<< HEAD
+
  // @author Mr_Hushbrown
 //Add velocity, delta x, delta y properties
 //Get extra help from Mr. Lawrence for this wih Ron
-public class Player {
 
-    public static final String PLAYER_RIGHT_STAND_01 = "PLAYER_RIGHT_STAND_01";
-    public static final String PLAYER_RIGHT_STAND_02 = "PLAYER_RIGHT_STAND_02";
-    public static final String PLAYER_RIGHT_STAND_03 = "PLAYER_RIGHT_STAND_03";
-    public static final String PLAYER_RIGHT_STAND_04 = "PLAYER_RIGHT_STAND_04";
 
-    {
-        PLAYER_STAND_RIGHT.add(PLAYER_01_RIGHT_STAND_01);
-        PLAYER_STAND_RIGHT.add(PLAYER_01_RIGHT_STAND_02);
-        PLAYER_STAND_RIGHT.add(PLAYER_01_RIGHT_STAND_03);
-        PLAYER_STAND_RIGHT.add(PLAYER_01_RIGHT_STAND_04);
+    
 
-        setAnimator(new Animator(imageManager, PLAYER_PUNCH_RIGHT, 200));
-
-    }
-=======
 // @author Mr_Hushbrown
 //Add velocity, delta x, delta y properties
 //Get extra help from Mr. Lawrence for this wih Ron
 public class Player {
->>>>>>> master
+
 
 //<editor-fold defaultstate="collapsed" desc="Constructors">
     {
@@ -56,7 +43,7 @@ public class Player {
 
     }
 
-<<<<<<< HEAD
+
     public Player(Point position, int speed, int width, int height, Direction direction, Action action) {
         this.position = position;
         this.speed = speed;
@@ -87,7 +74,7 @@ public class Player {
     private Animator animator;
 //</editor-fold>
 
-=======
+
     public Player(int x, int y, int width, int height, int velocity) {
         this.x = x;
         this.y = y;
@@ -99,16 +86,12 @@ public class Player {
 //</editor-fold>
     
      //<editor-fold defaultstate="collapsed" desc="properties">
-    private Direction direction = Direction.RIGHT;
-    private ArrayList<Point> body;
-    private Color BodyColor = Color.GREEN;
-    private int mouthWidth;
+   
 
 
     //<editor-fold defaultstate="collapsed" desc="properties">
     private int x, y;
-    private int width, height;
-    private int health = 100;
+  
 //    private Color color;
 //    private double speed = 11.25;
     private Velocity velocity;
@@ -194,31 +177,19 @@ public class Player {
     }
 
 //</editor-fold>
->>>>>>> master
+
     //<editor-fold defaultstate="collapsed" desc="hitbox">
     public Rectangle getHitBox() {
         return new Rectangle(getX() + (getWidth() / 4), getY() + (height / 4), getWidth() / 2, height / 2);
     }
 //</editor-fold>
 
-<<<<<<< HEAD
+
     //<editor-fold defaultstate="collapsed" desc="movement">
-    public void move() {
-        if (isAlive()) {
-            if (getDirection() == Direction.LEFT) {
-                x -= getSpeed();
-            } else if (getDirection() == Direction.RIGHT) {
-                x += getSpeed();
-            } else if (getDirection() == Direction.DOWN) {
-                y += getSpeed();
-            } else if (getDirection() == Direction.UP) {
-                y -= getSpeed();
-            }
-        }
-    }
+  
 //</editor-fold>
 
-=======
+
     public void draw(Graphics graphics) {
         graphics.setColor(Color.BLUE);
         graphics.drawRect(x, y, width, height);
@@ -261,7 +232,7 @@ public class Player {
 
 //</editor-fold>
     
->>>>>>> master
+
     //<editor-fold defaultstate="collapsed" desc="Health">
     public int getHealth() {
         return health;
@@ -269,10 +240,9 @@ public class Player {
 
     public void kill() {
         this.health = 0;
-<<<<<<< HEAD
+
         color = Color.DARK_GRAY;
-=======
->>>>>>> master
+
     }
 
     public void setHealth(int Health) {
@@ -301,13 +271,11 @@ public class Player {
         this.direction = direction;
     }
 
-<<<<<<< HEAD
     public void setBodyColor(Color BodyColor) {
         this.BodyColor = BodyColor;
     }
 
-=======
->>>>>>> master
+
     public int getWidth() {
         return width;
     }
@@ -316,7 +284,6 @@ public class Player {
         this.width = width;
     }
 
-<<<<<<< HEAD
     public double getSpeed() {
         return speed;
     }
@@ -357,8 +324,8 @@ public class Player {
     public void setAction(Action action) {
         this.action = action;
     }
-
-=======
-//</editor-fold>
->>>>>>> master
 }
+
+//</editor-fold>
+
+
