@@ -37,13 +37,13 @@ public class Player {
 
     }
 //</editor-fold>
-    
-     //<editor-fold defaultstate="collapsed" desc="properties">
+
+    //<editor-fold defaultstate="collapsed" desc="properties">
     private Direction direction = Direction.RIGHT;
     private ArrayList<Point> body;
     private Color BodyColor = Color.GREEN;
     private int mouthWidth;
-
+    private int equippedweapon;
 
     //<editor-fold defaultstate="collapsed" desc="properties">
     private int x, y;
@@ -181,7 +181,6 @@ public class Player {
     }
 
 //</editor-fold>
-    
     //<editor-fold defaultstate="collapsed" desc="Health">
     public int getHealth() {
         return health;
@@ -225,5 +224,16 @@ public class Player {
         this.width = width;
     }
 
+    public int getEquippedweapon() {
+        return equippedweapon;
+    }
+
+   
+    public void setEquippedweapon(int equippedweapon) {
+        this.equippedweapon = equippedweapon;
+    }
+
 //</editor-fold>
+
+
 }

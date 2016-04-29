@@ -24,7 +24,7 @@ import map.Item;
  */
 class Map extends Environment {
 
-    public static int DEFAULT_FLOOR = 525; 
+    public static int DEFAULT_FLOOR = 525;
 
     private GameState state;
     private dfMenu gamestartMenu;
@@ -49,7 +49,7 @@ class Map extends Environment {
         bricks = ResourceTools.loadImageFromResource("downfall/Images/bricks.png");
         bricksII = ResourceTools.loadImageFromResource("downfall/Images/bricksII.png");
 
-        player = new Player(500, 395, 70, 120, Direction.RIGHT);
+        player = new Player(500, 395, 60, 90, Direction.RIGHT);
         player.setFloor(DEFAULT_FLOOR);
 
         setUpGame();
@@ -68,7 +68,6 @@ class Map extends Environment {
 //    private Player getPlayer(600, 430, 103, 103 Direction.RIGHT) {
 //        return new Player(500, 395, 70, 130);
 //    }
-
     @Override
     public void initializeEnvironment() {
 
@@ -79,18 +78,23 @@ class Map extends Environment {
         if (player != null) {
             player.move();
         }
+//
+//        if (player.getVelocity()) {
+//            player.setVelocity(new Velocity(15, 0));
+//        }
+
     }
 
     @Override
     public void keyPressedHandler(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_W) {
-            player.addVelocity(new Velocity(0, -20));
+        if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+            player.addVelocity(new Velocity(0, -15));
         } else if (e.getKeyCode() == KeyEvent.VK_S) {
 //            player.addVelocity(new Velocity(0, -10));
         } else if (e.getKeyCode() == KeyEvent.VK_A) {
-            player.addVelocity(new Velocity(-1, 0));
+            player.setVelocity(new Velocity(-7, 0));
         } else if (e.getKeyCode() == KeyEvent.VK_D) {
-            player.addVelocity(new Velocity(1, 0));
+            player.setVelocity(new Velocity(7, 0));
         }
 //        if (e.getKeyCode() == KeyEvent.VK_W) {
 //            player.setDirection(Direction.UP);
@@ -105,14 +109,18 @@ class Map extends Environment {
 
     @Override
     public void keyReleasedHandler(KeyEvent e) {
-
+        if ((e.getKeyCode() == KeyEvent.VK_A)) {
+            player.setVelocity(new Velocity(0, 0));
+        } else if (e.getKeyCode() == KeyEvent.VK_D) {
+            player.setVelocity(new Velocity(0, 0));
+        }
     }
 
     @Override
     public void environmentMouseClicked(MouseEvent e) {
 
     }
-    
+
     @Override
     public void paintEnvironment(Graphics graphics) {
         graphics.drawImage(building01, -70, 245, 400, 280, this);
@@ -127,25 +135,22 @@ class Map extends Environment {
 
         graphics.setColor(Color.green);
         graphics.drawRect(0, 525, 1260, 145);
-        
+
 //        graphics.setColor(Color.red);
 //        graphics.drawRect(500, 395, 70, 120);
-
         //map boundary
         graphics.setColor(Color.YELLOW);
         graphics.drawRect(0, 0, 1261, 671);
 
-
         if (enemy01 != null) {
             enemy01.draw(graphics);
         }
-        
+
         if (player != null) {
             player.draw(graphics);
         }
 
         hud01.draw(graphics);
-
 
 //           if (items != null) {
 //            for (int i = 0; i < items.size(); i++) {
